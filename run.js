@@ -14,6 +14,9 @@ readline.question('Enter the pattern (regex, js, or alphanumerical string): ', p
 
     // Print the output more clearly
     console.log('--- Translation Result ---');
+    if (result.message) {
+      console.log(result.message);
+    }
     if (result.jsFormatted) {
       console.log('JS Formatted:', result.jsFormatted);
     }
@@ -23,8 +26,10 @@ readline.question('Enter the pattern (regex, js, or alphanumerical string): ', p
     if (result.translated) {
       console.log('Translated Alphanumerical String:', result.translated);
     }
-    console.log('Explanation:', result.explanation);
-    
+    if (result.explanation) {
+      console.log('Explanation:', result.explanation);
+    }
+
     readline.close();
   });
 });
