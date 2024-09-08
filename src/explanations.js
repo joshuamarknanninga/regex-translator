@@ -11,7 +11,13 @@ const explanations = {
   "+": "Matches 1 or more repetitions of the preceding element.",
   "?": "Matches 0 or 1 repetition of the preceding element.",
   "^": "Matches the start of a string.",
-  "$": "Matches the end of a string."
+  "$": "Matches the end of a string.",
+  "\\(": "Opening parenthesis for a capturing group.",
+  "\\)": "Closing parenthesis for a capturing group.",
+  "\\[": "Opening bracket for a character class.",
+  "\\]": "Closing bracket for a character class.",
+  "|": "Alternation (OR operator).",
+  "\\b": "Word boundary."
 };
 
 module.exports = {
