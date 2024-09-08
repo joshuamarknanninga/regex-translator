@@ -15,3 +15,4 @@ readline.question('Enter the pattern (regex or JS-escaped string): ', pattern =>
     readline.close();
   });
 });
+

@@ -6,7 +6,7 @@ const regexToJs = (regexString) => regexString.replace(/\\/g, '\\\\');
 const jsToRegex = (jsPattern) => jsPattern.replace(/\\\\/g, '\\');
 
 const regexExplanation = (regexString) => {
-  const patternComponents = regexString.match(/\\.|[^\s]/g);
+  const patternComponents = regexString.match(/\\.|[^\\s]/g);
   return patternComponents.map((component) => {
     return explanations[component] || `'${component}': No specific explanation found.`;
   }).join("\n");
@@ -31,3 +31,4 @@ const translateRegex = (inputString, inputType) => {
 module.exports = {
   translateRegex
 };
+
