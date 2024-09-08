@@ -11,8 +11,19 @@ const readline = require('readline').createInterface({
 readline.question('Enter the pattern (regex or JS-escaped string): ', pattern => {
   readline.question('Enter the type (regex/js): ', type => {
     const result = translateRegex(pattern, type);
-    console.log('Translation Result:', result);
+
+    // Print the output more clearly
+    console.log('--- Translation Result ---');
+    if (result.jsFormatted) {
+      console.log('JS Formatted:', result.jsFormatted);
+    }
+    if (result.rawFormatted) {
+      console.log('Raw Formatted:', result.rawFormatted);
+    }
+    console.log('Explanation:', result.explanation);
+    
     readline.close();
   });
 });
+
 
