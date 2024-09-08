@@ -8,8 +8,8 @@ const readline = require('readline').createInterface({
 });
 
 // Prompt for input and type
-readline.question('Enter the pattern (regex or JS-escaped string): ', pattern => {
-  readline.question('Enter the type (regex/js): ', type => {
+readline.question('Enter the pattern (regex, js, or alphanumerical string): ', pattern => {
+  readline.question('Enter the type (regex/js/alphanumerical): ', type => {
     const result = translateRegex(pattern, type);
 
     // Print the output more clearly
@@ -19,6 +19,9 @@ readline.question('Enter the pattern (regex or JS-escaped string): ', pattern =>
     }
     if (result.rawFormatted) {
       console.log('Raw Formatted:', result.rawFormatted);
+    }
+    if (result.translated) {
+      console.log('Translated Alphanumerical String:', result.translated);
     }
     console.log('Explanation:', result.explanation);
     
