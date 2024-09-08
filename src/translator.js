@@ -28,15 +28,21 @@ const regexExplanation = (regexString) => {
     return explanations[component] || `'${component}': No explanation available for this component.`;
   });
 
-  // Provide more concise output when explanations are missing
   return explanationsArray.join("\n");
 };
 
-// Main translation function
+// Main translation function with validation
 const translateRegex = (inputString, inputType) => {
   let output;
 
-  if (inputType === 'regex') {
+  // Simple validation: If the input string doesn't look like regex but is passed as regex, treat as alphanumerical
+  const looksLikeRegex = inputString.includes('\\') || /^[^a-zA-Z0-9 ]*$/.test(inputString);
+
+  if (inputType === 'regex' && !looksLikeRegex) {
+    output = {
+      message: "Input does not appear to be a valid regex pattern. You may want to select 'alphanumerical' instead."
+    };
+  } else if (inputType === 'regex') {
     const jsFormatted = regexToJs(inputString);
     const explanation = regexExplanation(inputString);
     output = { jsFormatted, explanation };
