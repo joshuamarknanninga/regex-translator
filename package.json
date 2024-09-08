@@ -1,0 +1,22 @@
+{
+  "name": "regex-translator",
+  "version": "1.0.0",
+  "description": "This is a simple regex translator, that can translate back and forth.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshuamarknanninga/regex-translator.git"
+  },
+  "author": "Joshua Mark Nanninga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshuamarknanninga/regex-translator/issues"
+  },
+  "homepage": "https://github.com/joshuamarknanninga/regex-translator#readme"
+}
